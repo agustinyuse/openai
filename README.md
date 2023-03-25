@@ -1,2 +1,2 @@
 # openai
-Integrando openai usando socketio + expressjs
+Integrando openai con expressjs
