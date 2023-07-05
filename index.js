@@ -11,7 +11,19 @@ dotenv.config();
 const cors = require("cors");
 
 app.use(express.json());
-//app.use(cors());
+
+const whitelist = ["https://portal-demo-nu.vercel.app"]
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error("Not allowed by CORS"))
+    }
+  },
+  credentials: true,
+}
+app.use(cors(corsOptions))
 
 const configuration = new Configuration({
   apiKey: process.env.openAIApiKey,
