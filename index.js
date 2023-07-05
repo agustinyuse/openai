@@ -11,7 +11,7 @@ dotenv.config();
 const cors = require("cors");
 
 app.use(express.json());
-app.use(cors());
+//app.use(cors());
 
 const configuration = new Configuration({
   apiKey: process.env.openAIApiKey,
