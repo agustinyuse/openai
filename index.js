@@ -12,7 +12,7 @@ const cors = require("cors");
 
 app.use(express.json());
 
-const whitelist = ["https://portal-demo-nu.vercel.app"]
+const whitelist = ["https://portal-demo-seven.vercel.app"]
 const corsOptions = {
   origin: function (origin, callback) {
     if (!origin || whitelist.indexOf(origin) !== -1) {
